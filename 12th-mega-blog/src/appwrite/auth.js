@@ -58,11 +58,13 @@ export class AuthService {
     async getCurrentUser(){
         // eslint-disable-next-line no-useless-catch
         try{
+            this.createAccount({email:'prajit@fh.com', password: 'password', name: 'prajith'});
             return await this.account.get();
 
         }
         catch(error){
-            throw error
+            console.log("No current user");
+            throw error;
         }
     }
 
